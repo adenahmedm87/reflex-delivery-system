@@ -1,0 +1,3 @@
+require('dotenv').config(); const fs=require('fs/promises'); const path=require('path'); const {Pool}=require('pg');
+(async()=>{const local=/localhost|127\.0\.0\.1/.test(process.env.DATABASE_URL||'');const pool=new Pool({connectionString:process.env.DATABASE_URL,ssl:local?false:{rejectUnauthorized:false}});try{const sql=await fs.readFile(path.join(__dirname,'..','sql','schema.sql'),'utf8');await pool.query(sql);console.log('Reflex database schema is ready.');}
+finally{await pool.end();}})().catch(e=>{console.error('Schema failed:',e.message);process.exit(1);});
