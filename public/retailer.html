@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Reflex Retailer</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="brand">REFLEX - Retailer</div>
+            <button class="btn ghost" id="logout">Logout</button>
+        </header>
+        <main class="container">
+            <div id="msg"></div>
+            <div class="grid two">
+                <section class="card"><h2>Create delivery</h2>
+                <form id="orderForm">
+                    <label>Customer name</label>
+                    <input id="customerName" required>
+                    <label>Customer phone</label>
+                    <input id="customerPhone" required>
+                    <label>Address</label>
+                    <input id="address" required>
+                    <label>Item</label>
+                    <textarea id="item" required></textarea>
+                    <label>Priority</label>
+                    <select id="priority">
+                        <option>NORMAL</option>
+                        <option>URGENT</option>
+                        <option>FRAGILE</option>
+                    </select>
+                    <label>Click customer destination on map</label>
+                    <div id="map" class="map"></div>
+                    <p id="pin" class="small muted">No destination pin yet.</p>
+                    <button class="btn" style="margin-top:.8rem">Create delivery</button>
+                </form>
+                </section>
+                <section class="card">
+                    <h2>Health score</h2>
+                    <p><span class="status health-ON_TRACK">ON_TRACK</span> under 15 min predicted delay</p>
+                    <p><span class="status health-AT_RISK">AT_RISK</span> 15-30 min</p>
+                    <p><span class="status health-ACTION_NEEDED">ACTION_NEEDED</span> over 30 min or active exception</p>
+                </section>
+            </div>
+            <h2>Orders</h2>
+            <div id="orders" class="grid two"></div>
+        </main>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <script src="/js/retailer.js"></script>
+    </body>
+</html>
