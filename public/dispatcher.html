@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Reflex Dispatcher</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="brand">REFLEX - Dispatcher</div>
+            <button class="btn ghost" id="logout">Logout</button>
+        </header>
+        <main class="container">
+            <div id="msg"></div>
+            <div class="grid two">
+                <section class="card">
+                    <h2>Riders</h2>
+                    <div id="riders"></div>
+                </section>
+                <section class="card">
+                    <h2>Sync conflicts</h2>
+                    <div id="conflicts"></div>
+                </section>
+            </div>
+            <h2>Orders</h2>
+            <div id="orders" class="grid two"></div>
+        </main>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/dispatcher.js"></script>
+    </body>
+</html>
