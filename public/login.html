@@ -1,34 +1,49 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reflex Login</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-  <main class="login">
-    <section class="card">
-      <div class="brand">REFLEX</div>
-      <h1>Delivery coordination that can recover.</h1>
-      <p class="muted">Pentacore Group 33 MVP</p>
+<body class="login-body">
+  <main class="login-container">
+    <section class="login-card">
+      <div class="login-brand">
+        <span class="brand-badge">REFLEX</span>
+        <span class="brand-sub">Delivery System</span>
+      </div>
+      
+      <h2>Delivery coordination that can recover.</h2>
+      <p class="subtitle">Pentacore Group 33 MVP</p>
+      
       <div id="msg"></div>
+      
       <form id="form">
-        <label>Email</label>
-        <input id="email" type="email" required>
-        <label>Password</label>
-        <input id="password" type="password" required>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="e.g. retailer@reflex.test" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="••••••••••••" required>
+        </div>
+        
         <div class="actions">
-          <button class="btn">Sign in</button>
-          <a class="btn secondary" href="/track.html">Customer tracking</a>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <a class="btn btn-secondary" href="/track.html">Customer Tracking</a>
         </div>
       </form>
-      <hr>
-      <p class="small">
-        Demo: retailer@reflex.test / Retailer123! &nbsp; | &nbsp;
-        dispatcher@reflex.test / Dispatcher123! &nbsp; | &nbsp;
-        rider1@reflex.test or rider2@reflex.test / Rider123!
-      </p>
+      
+      <div class="demo-footer">
+        <p class="demo-title">Demo Credentials</p>
+        <p class="demo-credentials">
+          <strong>Retailer:</strong> retailer@reflex.test / Retailer123!<br>
+          <strong>Dispatcher:</strong> dispatcher@reflex.test / Dispatcher123!<br>
+          <strong>Riders:</strong> rider1@reflex.test or rider2@reflex.test / Rider123!
+        </p>
+      </div>
     </section>
   </main>
   <script src="/js/login.js"></script>
